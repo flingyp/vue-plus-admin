@@ -290,40 +290,40 @@ export const CONSTANT_ROUTES: VAdmireRoute[] = [
           text: 'Level-2-1',
         },
       },
-      {
-        path: 'level-2-2',
-        name: 'Level-1_Level-2-2',
-        meta: {
-          text: 'Level-2-2',
-        },
-        children: [
-          {
-            path: 'level-3-1',
-            name: 'Level-1_Level-2-2_Level-3-1',
-            component: '~/views/level/Level-3-1.vue',
-            meta: {
-              text: 'Level-3-1',
-            },
-          },
-          {
-            path: 'level-3-3',
-            name: 'Level-1_Level-2-2_Level-3-3',
-            meta: {
-              text: 'Level-3-3',
-            },
-            children: [
-              {
-                path: 'level-4-1',
-                name: 'Level-1_Level-2-2_Level-3-3_Level-4-1',
-                component: '~/views/level/Level-4-1.vue',
-                meta: {
-                  text: 'Level-4-1',
-                },
-              },
-            ],
-          },
-        ],
-      },
+      // {
+      //   path: 'level-2-2',
+      //   name: 'Level-1_Level-2-2',
+      //   meta: {
+      //     text: 'Level-2-2',
+      //   },
+      //   children: [
+      //     {
+      //       path: 'level-3-1',
+      //       name: 'Level-1_Level-2-2_Level-3-1',
+      //       component: '~/views/level/Level-3-1.vue',
+      //       meta: {
+      //         text: 'Level-3-1',
+      //       },
+      //     },
+      //     {
+      //       path: 'level-3-3',
+      //       name: 'Level-1_Level-2-2_Level-3-3',
+      //       meta: {
+      //         text: 'Level-3-3',
+      //       },
+      //       children: [
+      //         {
+      //           path: 'level-4-1',
+      //           name: 'Level-1_Level-2-2_Level-3-3_Level-4-1',
+      //           component: '~/views/level/Level-4-1.vue',
+      //           meta: {
+      //             text: 'Level-4-1',
+      //           },
+      //         },
+      //       ],
+      //     },
+      //   ],
+      // },
     ],
   },
 ];

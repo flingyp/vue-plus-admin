@@ -4,29 +4,26 @@ All notable changes to this project will be documented in this file. See [standa
 
 ## [1.10.0](https://github.com/flingyp/vadmire-admin/compare/v1.9.0...v1.10.0) (2024-02-22)
 
-
 ### Features
 
-* modify fetchUrl and fetchKey to optional params of DeployReloadOptions ([9bceef4](https://github.com/flingyp/vadmire-admin/commit/9bceef4c463747d90419f9c6dbd3b0904564e41f))
+- modify fetchUrl and fetchKey to optional params of DeployReloadOptions ([9bceef4](https://github.com/flingyp/vadmire-admin/commit/9bceef4c463747d90419f9c6dbd3b0904564e41f))
 
 ## [1.9.0](https://github.com/flingyp/vadmire-admin/compare/v1.8.0...v1.9.0) (2024-01-24)
 
-
 ### Features
 
-* add DeployReload class to check whether system needs to be updated ([eeeb614](https://github.com/flingyp/vadmire-admin/commit/eeeb6143d923a89f64d83eeeea0e282b8648fe73))
-* add isOpenDeployReload config to handle deploy reload ([d833098](https://github.com/flingyp/vadmire-admin/commit/d8330984902cc5927fa81f2ad0d859267a360971))
-* add judge about fetchUrl is required in DeployReload ([a8a132b](https://github.com/flingyp/vadmire-admin/commit/a8a132bc8dc1746bad6b900bc97983dd0f6b3c0b))
-* add NaiveUIComponent page ([5e21fa2](https://github.com/flingyp/vadmire-admin/commit/5e21fa227c3d82174e837538f51b027bf2a147b7))
-* add vite-plugin-vue-devtools plugin ([725225e](https://github.com/flingyp/vadmire-admin/commit/725225e4746f218472776df00d887b6f3ed5cc58))
-* breadcrumb add menu icon ([246753b](https://github.com/flingyp/vadmire-admin/commit/246753be04bc7435a703f80c5ed156ff536a83f6))
-* extract local constants to LOCAL_KEY file ([eeb61b9](https://github.com/flingyp/vadmire-admin/commit/eeb61b9c5ebcc4b306d4e60f4806319b5094c5f2))
-
+- add DeployReload class to check whether system needs to be updated ([eeeb614](https://github.com/flingyp/vadmire-admin/commit/eeeb6143d923a89f64d83eeeea0e282b8648fe73))
+- add isOpenDeployReload config to handle deploy reload ([d833098](https://github.com/flingyp/vadmire-admin/commit/d8330984902cc5927fa81f2ad0d859267a360971))
+- add judge about fetchUrl is required in DeployReload ([a8a132b](https://github.com/flingyp/vadmire-admin/commit/a8a132bc8dc1746bad6b900bc97983dd0f6b3c0b))
+- add NaiveUIComponent page ([5e21fa2](https://github.com/flingyp/vadmire-admin/commit/5e21fa227c3d82174e837538f51b027bf2a147b7))
+- add vite-plugin-vue-devtools plugin ([725225e](https://github.com/flingyp/vadmire-admin/commit/725225e4746f218472776df00d887b6f3ed5cc58))
+- breadcrumb add menu icon ([246753b](https://github.com/flingyp/vadmire-admin/commit/246753be04bc7435a703f80c5ed156ff536a83f6))
+- extract local constants to LOCAL_KEY file ([eeb61b9](https://github.com/flingyp/vadmire-admin/commit/eeb61b9c5ebcc4b306d4e60f4806319b5094c5f2))
 
 ### Bug Fixes
 
-* dealing with code formatter caused error ([3d0d60b](https://github.com/flingyp/vadmire-admin/commit/3d0d60b59f56c43030dbcf4ab68f74c1fbab7d4b))
-* not found `@flypeng/tool/browser` package declare file ([1a84a86](https://github.com/flingyp/vadmire-admin/commit/1a84a86dae49296184bd3226a472b3feaf9536ea))
+- dealing with code formatter caused error ([3d0d60b](https://github.com/flingyp/vadmire-admin/commit/3d0d60b59f56c43030dbcf4ab68f74c1fbab7d4b))
+- not found `@flypeng/tool/browser` package declare file ([1a84a86](https://github.com/flingyp/vadmire-admin/commit/1a84a86dae49296184bd3226a472b3feaf9536ea))
 
 ### [1.8.1](https://github.com/flingyp/vadmire-admin/compare/v1.8.0...v1.8.1) (2023-12-12)
 

@@ -18,7 +18,9 @@ export const transformMenu = (menu: VAdmireMenuOption, t: ComposerTranslation) =
   let menuText = menu.label as string;
   if (internationalReg.test(menuText)) {
     const key = menuText.match(internationalReg)?.[1];
-    key && (menuText = t(key));
+    if (key) {
+      menuText = t(key);
+    }
   }
   newMenu.label = menuText;
   return newMenu;

@@ -35,8 +35,8 @@ const handleChange = (editor: IDomEditor) => {
     <Editor
       v-model="editorContent"
       :default-config="editorConfig"
-      @onCreated="handleCreated"
-      @onChange="handleChange"
+      @on-created="handleCreated"
+      @on-change="handleChange"
     />
   </div>
 </template>

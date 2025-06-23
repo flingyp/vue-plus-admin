@@ -23,17 +23,20 @@ export const useTable = <T>() => {
     total: number;
   }
 
-  const getTableData = async (callback: Function) => {
+  const getTableData = async (callback: () => Promise<ResponseTableData>) => {
     let result: ResponseTableData = {
       list: [],
       total: 0,
     };
     const response = await withLoading(async () => {
+      // @ts-expect-error
       const { data } = (await callback()) as { data: ResponseTableData };
       tableData.value = data.list;
       return data;
     });
-    response && (result = response);
+    if (response) {
+      result = response;
+    }
     return result;
   };
 
@@ -41,13 +44,17 @@ export const useTable = <T>() => {
   const exportExcel = (sheetName: string, fileName: string, headerName?: string[], sourceData?: unknown[]) => {
     let worksheet: XLSX.WorkSheet;
 
-    sourceData
-      ? (worksheet = XLSX.utils.json_to_sheet(sourceData))
-      : (worksheet = XLSX.utils.json_to_sheet(tableData.value ?? []));
+    if (sourceData) {
+      worksheet = XLSX.utils.json_to_sheet(sourceData);
+    } else {
+      worksheet = XLSX.utils.json_to_sheet(tableData.value ?? []);
+    }
 
     const workbook = XLSX.utils.book_new();
 
-    headerName && XLSX.utils.sheet_add_aoa(worksheet, [headerName], { origin: 'A1' });
+    if (headerName) {
+      XLSX.utils.sheet_add_aoa(worksheet, [headerName], { origin: 'A1' });
+    }
 
     XLSX.utils.book_append_sheet(workbook, worksheet, sheetName ?? 'Sheet1');
 

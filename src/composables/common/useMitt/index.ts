@@ -3,9 +3,9 @@ import mitt from 'mitt';
 const emitter = mitt();
 
 export const useMitt = <T>() => {
-  const on = (key: string, callback: Function) => {
+  const on = (key: string, callback: (value: T) => void) => {
     emitter.on(key, (value) => {
-      callback(value);
+      callback(value as T);
     });
   };
 

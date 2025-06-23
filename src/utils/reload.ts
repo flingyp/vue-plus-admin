@@ -50,12 +50,16 @@ export class DeployReload {
 
     const timeoutValue = this.checkTimeout * 1000;
     const callback = this.checkBuildTime.bind(this);
-    this.execute && callback();
+    if (this.execute) {
+      callback();
+    }
     this.intervalInstance = setInterval(callback, timeoutValue);
 
     document.addEventListener('visibilitychange', () => {
       if (document.visibilityState === 'visible') {
-        this.execute && callback();
+        if (this.execute) {
+          callback();
+        }
         this.intervalInstance = setInterval(callback, timeoutValue);
       } else {
         clearInterval(this.intervalInstance);

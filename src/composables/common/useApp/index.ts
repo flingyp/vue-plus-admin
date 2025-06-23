@@ -25,7 +25,9 @@ export function useApp() {
     let menuText = route.meta.text || '';
     if (internationalReg.test(menuText)) {
       const key = menuText.match(internationalReg)?.[1];
-      key && (menuText = t(key));
+      if (key) {
+        menuText = t(key);
+      }
     }
 
     document.querySelector('title')!.innerHTML = menuText ? `${menuText} | ${name.value}` : name.value;

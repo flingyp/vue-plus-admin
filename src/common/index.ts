@@ -1,1 +1,1 @@
-export * from './LOCAL_KEY'
+export * from './LOCAL_KEY';

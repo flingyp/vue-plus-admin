@@ -15,5 +15,7 @@ export const mountRoute = (route: RouteRecordRaw, routerInstance: Router) => {
  * @param routerInstance
  */
 export const removeRoute = (route: RouteRecordRaw, routerInstance: Router) => {
-  route.name && routerInstance.removeRoute(route.name);
+  if (route.name) {
+    routerInstance.removeRoute(route.name);
+  }
 };

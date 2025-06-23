@@ -17,7 +17,7 @@ import {
 
 export const routeGenerateMenuProcess = async (
   routerInstance: Router,
-  routeMenuStore: Store<'routeMenuStore', RouteMenuStore, {}, {}>,
+  routeMenuStore: Store<'routeMenuStore', RouteMenuStore, object, object>,
 ) => {
   // 1. get account info
   const { data: systemAccountInfo } = await getSystemAccountInfo();
@@ -97,6 +97,10 @@ export default async (
     // check whether white list is configured
     const isAccess = WHITE_ROUTE_LIST.includes(to.name as string);
     // release if configured, otherwise it will go to the login page
-    isAccess ? next() : next({ name: LOGIN_ROUTE_NAME });
+    if (isAccess) {
+      next();
+    } else {
+      next({ name: LOGIN_ROUTE_NAME });
+    }
   }
 };

@@ -10,8 +10,8 @@
             "</template>",
             "",
             "<style scoped></style>",
-            ""
+            "",
         ],
-        "description": "Output a sfc code block"
-    }
+        "description": "Output a sfc code block",
+    },
 }

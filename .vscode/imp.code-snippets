@@ -3,6 +3,6 @@
         "scope": "javascript,typescript,vue",
         "prefix": "imp",
         "body": ["import { $2 } from '~$1';"],
-        "description": "Output an import code block"
-    }
+        "description": "Output an import code block",
+    },
 }

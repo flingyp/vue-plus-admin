@@ -31,13 +31,8 @@ export const generatePlugins = (command: string, mode: string, buildTimestamp: n
     ViteMockServe({
       mockPath: 'mock',
       localEnabled: command === 'serve',
-      prodEnabled: command !== 'serve' && mode === 'development',
       watchFiles: command === 'serve',
       logger: true,
-      injectCode: `
-            import { setupProdMockServer } from './mock-prod-server';
-            setupProdMockServer();
-          `,
     }),
     // Auto import api
     AutoImport({

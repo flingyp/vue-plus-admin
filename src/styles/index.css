@@ -3,9 +3,9 @@
 @import url('./transition.css');
 @import url('nprogress/nprogress.css');
 @import url('./reset.css');
-@import url('driver.js/dist/driver.min.css');
+@import url('driver.js/dist/driver.css');
 @import url('vue3-photo-preview/dist/index.css');
 @import url('animate.css');
-@import url('@logicflow/core/dist/style/index.css');
+@import url('@logicflow/core/dist/index.css');
 @import url('@logicflow/extension/lib/style/index.css');
 @import url('./global.css');
