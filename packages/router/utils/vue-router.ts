@@ -1,18 +1,18 @@
 import { Router, RouteRecordRaw } from 'vue-router';
 
 /**
- * mount route
- * @param route
- * @param routerInstance
+ * 挂载路由
+ * @param route 路由配置
+ * @param routerInstance 路由实例
  */
 export const mountRoute = (route: RouteRecordRaw, routerInstance: Router) => {
   routerInstance.addRoute(route);
 };
 
 /**
- * remove route
- * @param route
- * @param routerInstance
+ * 移除路由
+ * @param route 路由配置
+ * @param routerInstance 路由实例
  */
 export const removeRoute = (route: RouteRecordRaw, routerInstance: Router) => {
   if (route.name) {

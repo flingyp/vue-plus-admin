@@ -48,7 +48,9 @@
     "vue3-photo-preview": "^0.3.0",
     "vuedraggable": "^4.1.0",
     "xgplayer": "^3.0.22",
-    "xlsx": "https://cdn.sheetjs.com/xlsx-0.19.3/xlsx-0.19.3.tgz"
+    "xlsx": "https://cdn.sheetjs.com/xlsx-0.19.3/xlsx-0.19.3.tgz",
+    "@vadmire/router": "workspace:*",
+    "@vadmire/store": "workspace:*"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.8.1",

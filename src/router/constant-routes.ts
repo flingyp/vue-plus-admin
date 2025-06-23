@@ -1,4 +1,4 @@
-import { VAdmireRoute } from 'vue-router';
+import { VAdmireRoute } from '@vadmire/router';
 import { LOGIN_ROUTE_NAME, NOT_FOUND_404_ROUTE_NAME } from '~/common';
 
 export const CONSTANT_ROUTES: VAdmireRoute[] = [

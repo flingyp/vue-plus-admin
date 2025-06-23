@@ -2,7 +2,7 @@ import { MockResponse } from 'mock';
 import Mock from 'mockjs';
 import { MockMethod } from 'vite-plugin-mock';
 import { useRandomString } from '@flypeng/tool/browser';
-import { VAdmireRoute } from 'vue-router';
+import { VAdmireRoute } from '@vadmire/router';
 
 const mockRandom = Mock.Random;
 

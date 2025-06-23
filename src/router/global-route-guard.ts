@@ -1,19 +1,20 @@
 import { Store } from 'pinia';
-import { NavigationGuardNext, RouteLocationNormalized, Router, VAdmireRoute } from 'vue-router';
-import { useCommonType, useDeepClone } from '@flypeng/tool/browser';
-
-import { RouteMenuStore, useRouteMenuStore } from '~/store';
-import { ASYNC_ROUTES, CONSTANT_ROUTES, MATCH_404_ROUTES } from './modules';
-import { getSystemAccountInfo, getSystemAccountAsyncRoutes } from '~/requests';
-import { AUTH_TOKEN, WHITE_ROUTE_LIST, HANDLE_ROUTE_FORM, LOGIN_ROUTE_NAME, SYSTEM_HOME_ROUTE_NAME } from '~/common';
+import { NavigationGuardNext, RouteLocationNormalized, Router, RouteRecordRaw } from 'vue-router';
 import {
   filterRoutes,
-  vadmireRouteToRouteRecordRaw,
   generateSystemMenu,
   mountRoute,
-  transform,
   sortSystemMenu,
-} from './utils';
+  transform,
+  VAdmireRoute,
+  vadmireRouteToRouteRecordRaw,
+} from '@vadmire/router';
+import { useCommonType, useDeepClone } from '@flypeng/tool/browser';
+import { RouteMenuStore, useRouteMenuStore } from '~/store';
+import { CONSTANT_ROUTES, MATCH_404_ROUTES } from './constant-routes';
+import { ASYNC_ROUTES } from './async-routes';
+import { getSystemAccountInfo, getSystemAccountAsyncRoutes } from '~/requests';
+import { AUTH_TOKEN, WHITE_ROUTE_LIST, HANDLE_ROUTE_FORM, LOGIN_ROUTE_NAME, SYSTEM_HOME_ROUTE_NAME } from '~/common';
 
 export const routeGenerateMenuProcess = async (
   routerInstance: Router,
@@ -40,7 +41,7 @@ export const routeGenerateMenuProcess = async (
   const vadmireMenu = sortSystemMenu(generateSystemMenu([...CONSTANT_ROUTES, ...filterAsyncRoutes]));
 
   // 5. mount async route
-  vrouterAsyncRoutes.forEach((route) => {
+  vrouterAsyncRoutes.forEach((route: RouteRecordRaw) => {
     if (route.meta?.link === 'EXTERNAL_LINK') return;
     mountRoute(route, routerInstance);
   });

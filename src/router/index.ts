@@ -1,8 +1,5 @@
+import { router } from '@vadmire/router';
 import nprogress from 'nprogress';
-import { createRouter, createWebHashHistory } from 'vue-router';
-
-import { CONSTANT_ROUTES } from './modules';
-import { vadmireRouteToRouteRecordRaw } from './utils';
 import globalRouteGuardProcess from './global-route-guard';
 
 nprogress.configure({
@@ -10,12 +7,6 @@ nprogress.configure({
   speed: 500,
   trickle: false,
   showSpinner: false,
-});
-
-const router = createRouter({
-  routes: vadmireRouteToRouteRecordRaw(CONSTANT_ROUTES),
-  strict: true,
-  history: createWebHashHistory(),
 });
 
 router.beforeEach(async (to, from, next) => {

@@ -15,12 +15,13 @@
     "noEmit": true,
     "paths": {
       "~/*": ["src/*"],
-      "@flypeng/tool/browser": ["node_modules/@flypeng/tool/dist/browser/index.d.ts"],
-      "@flypeng/tool/node": ["node_modules/@flypeng/tool/dist/node/index.d.ts"]
+      "@vadmire/*": ["packages/*"],
+      "@flypeng/tool/browser": ["node_modules/@flypeng/tool/dist/browser"],
+      "@flypeng/tool/node": ["node_modules/@flypeng/tool/dist/node"]
     },
     "types": ["unplugin-icons/types/vue", "naive-ui/volar"]
   },
-  "include": ["src/**/*", "mock/**/*", "auto-imports.d.ts", "components.d.ts"],
+  "include": ["src/**/*", "mock/**/*", "packages/**/*", "auto-imports.d.ts", "components.d.ts"],
   "exclude": ["dist", "node_modules"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
