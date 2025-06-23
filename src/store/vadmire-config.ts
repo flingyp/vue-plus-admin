@@ -49,14 +49,14 @@ export const useVAdmireConfigStore = defineStore('vadmireConfigStore', {
     },
   },
   actions: {
-    // controls whether the sidebar is collapsed
+    // 控制侧边栏是否收起
     handleIsCollapsedSider() {
       this.isCollapsedSider = !this.isCollapsedSider;
     },
-    // exit system logic
+    // 退出系统逻辑
     async handleExitSystem() {
       const routeMenuStore = useRouteMenuStore();
-      // reset variants of handling to get route and to generate route logic
+      // 重置获取路由和生成路由的相关变量
       routeMenuStore.isMountedRoute = false;
       routeMenuStore.isMountedNotFoundRoute = false;
       const defaultConfig = defaultVAdmireConfig();

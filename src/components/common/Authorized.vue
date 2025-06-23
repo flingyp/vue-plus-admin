@@ -11,3 +11,5 @@ const { isHavePermission } = usePermission(permission.value);
 <template>
   <slot v-if="isHavePermission" />
 </template>
+
+// 权限校验组件

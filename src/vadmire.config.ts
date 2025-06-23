@@ -10,7 +10,7 @@ export const sceneColorMap: Record<ColorType, string> = {
   error: '#FF4838',
 };
 
-// default vadmireConfigStore initial config
+// vadmireConfigStore 默认初始配置
 export function defaultVAdmireConfig(): VAdmireConfig {
   return {
     name: 'VAdmire Admin',

@@ -19,10 +19,12 @@ const vditorTheme = computed(() => {
   return 'classic';
 });
 
+// 监听暗色模式切换，动态设置主题
 watch(isDark, () => {
   vditorInstance.value?.setTheme(vditorTheme.value, props.contentTheme, props.codeTheme);
 });
 
+// 挂载后初始化 Vditor 编辑器
 onMounted(() => {
   vditorInstance.value = new Vditor('vditor', {
     theme: vditorTheme.value,

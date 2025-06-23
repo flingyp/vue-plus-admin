@@ -5,7 +5,7 @@
 @plugin "@tailwindcss/typography";
 
 @theme {
-  /* textColor */
+  /* 文字颜色 */
   --color-primary: var(--primaryColor);
   --color-primaryHover: var(--primaryColorHover);
   --color-primaryPressed: var(--primaryColorPressed);
@@ -24,16 +24,16 @@
   --color-warningSuppl: var(--warningColorSuppl);
   --color-error: var(--errorColor);
   --color-errorHover: var(--errorColorHover);
-  --color-errorPressed: var(--errorColorPressed);
-  --color-errorSuppl: var(--errorColorSuppl);
+  --color-errorPressed: var(--color-errorPressed);
+  --color-errorSuppl: var(--color-errorSuppl);
 
-  /* backgroundColor */
+  /* 背景颜色 */
   --color-vPageBgColor: #fff;
   --color-vPageBgDarkColor: rgb(24 24 28);
   --color-vHeaderBgColor: #f3f4f6;
   --color-vHeaderBgDarkColor: rgb(24 24 28);
 
-  /* borderColor */
+  /* 边框颜色 */
   --color-vBorderLight: rgb(239 239 245);
   --color-vBorderDark: rgb(255 255 255 / 10%);
 }

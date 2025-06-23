@@ -13,17 +13,17 @@ const { editorInstance, toolBarConfig, editorConfig, setEditor } = useWangEditor
 const { content } = toRefs(props);
 const editorContent = ref(content.value);
 
-// init editor config
+// 初始化编辑器配置
 editorConfig.value.placeholder = '上传图片、上传视频没有做配置, 请参考wangEditor进行配置';
 editorConfig.value.readOnly = false;
 editorConfig.value.autoFocus = true;
 
-// editor created
+// 编辑器创建完成
 const handleCreated = (editor: IDomEditor) => {
   setEditor(editor);
 };
 
-// editor content change
+// 编辑器内容变化
 const handleChange = (editor: IDomEditor) => {
   emit('update:content', editor.getHtml());
 };

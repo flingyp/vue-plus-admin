@@ -19,29 +19,29 @@ import { writeFileSync } from 'fs';
 import { name, version } from '../package.json';
 
 /**
- * Vite config plugins
- * @param command
- * @param mode
- * @returns
+ * Vite 配置插件
+ * @param command 命令
+ * @param mode 模式
+ * @returns 插件列表
  */
 export const generatePlugins = (command: string, mode: string, buildTimestamp: number): PluginOption[] => {
   const pluginList: PluginOption[] = [
     vue(),
-    // Mock Api
+    // Mock 接口
     ViteMockServe({
       mockPath: 'mock',
       localEnabled: command === 'serve',
       watchFiles: command === 'serve',
       logger: true,
     }),
-    // Auto import api
+    // 自动导入 API
     AutoImport({
       imports: ['vue', 'vue-router', 'vue-i18n', 'pinia', '@vueuse/core'],
       dts: 'auto-imports.d.ts',
       dirs: ['src/utils/**', 'src/store/**', 'src/composables/**'],
       vueTemplate: true,
     }),
-    // Auto import component
+    // 自动导入组件
     Components({
       extensions: ['vue'],
       include: [/\.vue$/, /\.vue\?vue/],
@@ -60,7 +60,7 @@ export const generatePlugins = (command: string, mode: string, buildTimestamp: n
         NaiveUiResolver(),
       ],
     }),
-    // Auto use Iconify icon
+    // 自动使用 Iconify 图标
     Icons({
       autoInstall: true,
       compiler: 'vue3',
@@ -69,12 +69,12 @@ export const generatePlugins = (command: string, mode: string, buildTimestamp: n
       defaultClass: 'unplugin-icon',
       jsx: 'react',
     }),
-    // First screen loading
+    // 首屏加载动画
     spaLoading('svg', {
       path: './public/spa-loading.svg',
       cssPath: './public/spa-loading.css',
     }),
-    // Clear console
+    // 清理控制台
     clearConsole({
       inject: {
         path: './src/main.ts',

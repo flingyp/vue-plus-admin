@@ -8,7 +8,7 @@ const axiosConfig: CreateAxiosDefaults = {
 
 const requestInstance = axios.create(axiosConfig);
 
-// Request interceptor
+// 请求拦截器
 requestInstance.interceptors.request.use(
   (config) => config,
   (error) => Promise.reject(error),

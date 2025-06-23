@@ -10,7 +10,7 @@ export default defineComponent({
   },
   setup(props) {
     const icon = toRef(props, 'icon');
-    // return render function
+    // 返回渲染函数
     return useRenderIcon(icon.value);
   },
 });

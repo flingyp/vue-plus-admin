@@ -16,6 +16,7 @@ const player = ref<XGPlayer>();
 const randomId = ref(`${useRandomString(6)}_XGPlayer_${useRandomString(6)}`);
 
 onMounted(() => {
+  // 初始化播放器
   player.value = new XGPlayer({
     id: randomId.value,
     url: props.url,

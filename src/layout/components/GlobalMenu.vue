@@ -25,14 +25,14 @@ const transformMenuList = computed(() => {
   return i18nMenu;
 });
 
-// route key whether include from menu
+// 路由 key 是否包含在菜单中
 const isIncludeMenuByKey = (key: string, menu: VAdmireMenuOption): boolean => {
   if (key === menu.key) return true;
   if (menu.children) return menu.children.some((item) => isIncludeMenuByKey(key, item));
   return false;
 };
 
-// get breadcrumb menu
+// 获取面包屑菜单
 const getBreadCrumbMenu = (key: string, menu: VAdmireMenuOption) => {
   const breadCrumbMenu: VAdmireMenuOption[] = [];
   breadCrumbMenu.push(menu);
@@ -50,7 +50,7 @@ const getBreadCrumbMenu = (key: string, menu: VAdmireMenuOption) => {
   return breadCrumbMenu;
 };
 
-// generate breadcrumb menu
+// 生成面包屑菜单
 const createBreadCrumbMenu = (key: string, menus: VAdmireMenuOption[]) => {
   let parentMenu: VAdmireMenuOption = {};
   for (let i = 0; i < menus.length; i++) {
@@ -60,29 +60,29 @@ const createBreadCrumbMenu = (key: string, menus: VAdmireMenuOption[]) => {
   return getBreadCrumbMenu(key, parentMenu);
 };
 
-// watch the route and change current checked menu
+// 监听路由变化，切换当前选中菜单
 const routeKey = ref(route.name as string);
 watchEffect(() => {
   routeKey.value = route.name as string;
 
-  // generate breadcrumb menu
+  // 生成面包屑菜单
   // @ts-ignore
   breadCrumbMenus.value = createBreadCrumbMenu(routeKey.value, vadmireMenu.value);
 });
 
-// click menu
+// 点击菜单
 const clickMenu = (key: string, menu: VAdmireMenuOption) => {
   if (menu.link === 'EXTERNAL_LINK' && menu.url) {
     window.open(menu.url as string);
   } else {
-    // create tab menu key
+    // 创建 tab 菜单 key
     routeMenuStore.createTabMenuKey(key as string);
     router.push({ name: key });
   }
 };
 
 onMounted(() => {
-  // create tab menu key
+  // 创建 tab 菜单 key
   routeMenuStore.createTabMenuKey(route.name as string);
 });
 </script>

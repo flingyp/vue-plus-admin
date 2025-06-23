@@ -20,7 +20,7 @@ export class DeployReload {
   private fetchKey: string;
   private isListening: boolean;
   private stashBuildTime: number = 0;
-  private checkTimeout: number; // Second
+  private checkTimeout: number; // 秒
   private execute: boolean = false;
   private intervalInstance: any;
 
@@ -30,7 +30,7 @@ export class DeployReload {
     const defaultFetchUrl = `${window.location.origin}/config.json`;
     this.fetchUrl = options.fetchUrl || defaultFetchUrl;
     if (!this.fetchUrl) {
-      console.error('fetchUrl is required in DeployReload');
+      console.error('DeployReload 中必须提供 fetchUrl');
     }
 
     this.fetchKey = options.fetchKey || 'buildTime';

@@ -55,7 +55,7 @@ export const useRouteMenuStore = defineStore('routeMenuStore', {
       flat(vadmireMenu);
       return vadmireMenuByFlat;
     },
-    // The menu is flattened and does not contain the parent menu
+    // 菜单扁平化后不包含父级菜单
     vadmireChildrenMenuByFlat(state) {
       const { vadmireMenu } = state;
       const vadmireChildrenMenuByFlat: VAdmireMenuOption[] = [];
@@ -72,7 +72,7 @@ export const useRouteMenuStore = defineStore('routeMenuStore', {
       const { tabMenuKeys } = state;
       const menuByFlat = this.vadmireMenuByFlat;
       const menuList: VAdmireMenuOption[] = [];
-      // eslint-disable-next-line no-restricted-syntax
+
       for (const item of tabMenuKeys) {
         const tabMenu = menuByFlat.find((menu) => menu.key === item);
         if (tabMenu) menuList.push(tabMenu);

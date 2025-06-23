@@ -11,21 +11,21 @@ const chartInstance = shallowRef<echarts.ECharts>();
 
 const themeMode = computed(() => (isDark.value ? 'dark' : 'light'));
 
-// init chart
+// 初始化图表
 const initChart = () => {
   if (chartRef.value) {
     chartInstance.value = echarts.init(chartRef.value, themeMode.value);
 
     const chartOptions = props.options;
-    // modify chart background color to be transparent
-    // default background color in the dark mode is not match system background color
+    // 修改图表背景色为透明
+    // 暗色模式下默认背景色与系统背景色不一致
     chartOptions.backgroundColor = 'transparent';
 
     chartInstance.value.setOption(chartOptions);
   }
 };
 
-// reset chart size
+// 重置图表尺寸
 const resizeChart = () => {
   chartInstance.value?.resize();
 };

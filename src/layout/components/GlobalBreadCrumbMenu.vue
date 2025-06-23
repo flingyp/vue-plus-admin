@@ -15,9 +15,9 @@ const transformMenuList = computed(() => {
   return i18nMenu;
 });
 
-// click breadcrumb menu
+// 点击面包屑菜单
 const clickBreadCrumbItem = (key: string) => {
-  // create tab menu key
+  // 创建 tab 菜单 key
   routeMenuStore.createTabMenuKey(key);
 
   router.push({ name: key });

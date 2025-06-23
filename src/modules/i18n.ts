@@ -15,6 +15,7 @@ const messages = {
   ko_KR: { ...KR },
 };
 
+// 注册 i18n 插件
 export const useI18n = (app: App) => {
   app.use(
     createI18n({

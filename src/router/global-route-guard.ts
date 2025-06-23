@@ -20,11 +20,11 @@ export const routeGenerateMenuProcess = async (
   routerInstance: Router,
   routeMenuStore: Store<'routeMenuStore', RouteMenuStore, object, object>,
 ) => {
-  // 1. get account info
+  // 1. 获取账号信息
   const { data: systemAccountInfo } = await getSystemAccountInfo();
   const permissions: string[] = systemAccountInfo.permissions || [];
 
-  // 2. filter VAdmireRoute async route
+  // 2. 过滤 VAdmireRoute 异步路由
   let filterAsyncRoutes: VAdmireRoute[] = [];
   if (HANDLE_ROUTE_FORM === 'WEB') {
     const asyncRoutes = useDeepClone(ASYNC_ROUTES);
@@ -33,20 +33,20 @@ export const routeGenerateMenuProcess = async (
     filterAsyncRoutes = await (await getSystemAccountAsyncRoutes()).data;
   }
 
-  // 3. transform route list of VAdmireRoute[] to route of RouteRecordRaw[]
+  // 3. 将 VAdmireRoute[] 路由列表转换为 RouteRecordRaw[]
   const vrouterAsyncRoutes = vadmireRouteToRouteRecordRaw(filterAsyncRoutes);
   const vrouterConstantRoutes = vadmireRouteToRouteRecordRaw(CONSTANT_ROUTES);
 
-  // 4. generate menu
+  // 4. 生成菜单
   const vadmireMenu = sortSystemMenu(generateSystemMenu([...CONSTANT_ROUTES, ...filterAsyncRoutes]));
 
-  // 5. mount async route
+  // 5. 挂载异步路由
   vrouterAsyncRoutes.forEach((route: RouteRecordRaw) => {
     if (route.meta?.link === 'EXTERNAL_LINK') return;
     mountRoute(route, routerInstance);
   });
 
-  // 6. initial state store
+  // 6. 初始化状态存储
   routeMenuStore.account = systemAccountInfo;
   routeMenuStore.vadmireConstantRoutes = CONSTANT_ROUTES;
   routeMenuStore.vadmireAsyncRoutes = filterAsyncRoutes;

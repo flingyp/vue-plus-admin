@@ -10,7 +10,7 @@ const { naiveThemeOverrides, themeMode, defaultLocales } = storeToRefs(useVAdmir
 
 const { isLoading, loadingText } = inject('loading') as { isLoading: boolean; loadingText: string };
 
-// Naive UI Language Config
+// Naive UI 语言配置
 const naiveUILocale = computed(() => {
   if (defaultLocales.value === 'zh_CN') {
     return {
