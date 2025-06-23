@@ -1,0 +1,49 @@
+---
+description:
+globs:
+alwaysApply: true
+---
+---
+description: Vue.js 面向现代 Web 应用的最佳实践和模式
+globs: **/*.vue, **/*.ts, components/**/*
+---
+
+## 组件结构
+
+- 使用组合式API (Composition API) 替代选项式API
+- 使用 `ref` + `computed` 组合来声明响应式变量和衍生响应式数据，避免使用 `reactive`
+- 通过 `<script setup lang="ts">` 简化组件代码
+- 使用 defineProps 和 defineEmits 进行组件通信
+- 大型组件拆分为更小的可复用组件
+
+## 命名约定
+
+- 组件文件名使用 PascalCase
+- 组件名应自描述且有意义
+- Props 使用 camelCase
+- 事件名使用 kebab-case
+
+## 类型安全
+
+- 使用 TypeScript 类型定义增强代码稳定性
+- 为 props 和 emits 提供完整类型注解
+- 使用 defineProps<>() 泛型语法定义 props
+
+## 状态管理
+
+- 小规模应用使用 provide/inject 或 reactive 对象
+- 中大型应用使用 Pinia 进行状态管理
+- 避免滥用 Vuex/Pinia，局部状态保持在组件内
+
+## 性能优化
+
+- 使用 v-memo 缓存重渲染开销大的模板
+- 大型列表使用虚拟滚动
+- 使用异步组件和代码分割优化加载时间
+- computed 属性替代复杂模板表达式
+
+## 代码风格
+
+- 使用 ESLint 和 Prettier 保持一致代码风格
+- 遵循单一职责原则
+- 文件结构清晰，便于维护
