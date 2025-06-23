@@ -4,6 +4,40 @@
 
 @plugin "@tailwindcss/typography";
 
+@theme {
+  /* textColor */
+  --color-primary: var(--primaryColor);
+  --color-primaryHover: var(--primaryColorHover);
+  --color-primaryPressed: var(--primaryColorPressed);
+  --color-primarySuppl: var(--primaryColorSuppl);
+  --color-info: var(--infoColor);
+  --color-infoHover: var(--infoColorHover);
+  --color-infoPressed: var(--infoColorPressed);
+  --color-infoSuppl: var(--infoColorSuppl);
+  --color-success: var(--successColor);
+  --color-successHover: var(--successColorHover);
+  --color-successPressed: var(--successColorPressed);
+  --color-successSuppl: var(--successColorSuppl);
+  --color-warning: var(--warningColor);
+  --color-warningHover: var(--warningColorHover);
+  --color-warningPressed: var(--warningColorPressed);
+  --color-warningSuppl: var(--warningColorSuppl);
+  --color-error: var(--errorColor);
+  --color-errorHover: var(--errorColorHover);
+  --color-errorPressed: var(--errorColorPressed);
+  --color-errorSuppl: var(--errorColorSuppl);
+
+  /* backgroundColor */
+  --color-vPageBgColor: #fff;
+  --color-vPageBgDarkColor: rgb(24 24 28);
+  --color-vHeaderBgColor: #f3f4f6;
+  --color-vHeaderBgDarkColor: rgb(24 24 28);
+
+  /* borderColor */
+  --color-vBorderLight: rgb(239 239 245);
+  --color-vBorderDark: rgb(255 255 255 / 10%);
+}
+
 @layer base {
   h1 {
     font-weight: bold;
