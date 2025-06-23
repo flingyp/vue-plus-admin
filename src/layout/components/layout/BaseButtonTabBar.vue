@@ -52,7 +52,7 @@ const deleteTabMenu = (key: string) => {
   <Swiper ref="swiper" slides-per-view="auto" class="w-[10vw] flex-1 h-full flex items-center space-x-2 mx-2">
     <SwiperSlide v-for="menu in transformMenuList" :key="menu.key" class="!w-auto mr-2">
       <div
-        class="flex items-center px-2 py-1 rounded border border-none cursor-pointer group"
+        class="flex items-center px-2 py-1 rounded border border-none cursor-pointer group text"
         :class="[route.name === menu.key ? 'bg-primary border-primary text-white' : '']"
         @click="clickTabMenu(menu.key as string)"
       >

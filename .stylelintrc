@@ -3,6 +3,7 @@
     "rules": {
         "custom-property-pattern": null,
         "selector-class-pattern": null,
-        "value-keyword-case": null
+        "value-keyword-case": null,
+        "at-rule-no-unknown": null
     }
 }

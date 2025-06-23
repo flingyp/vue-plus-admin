@@ -1,8 +1,8 @@
-/* stylelint-disable at-rule-no-unknown */
+@import url('tailwindcss');
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@config "../../tailwind.config.js";
+
+@plugin "@tailwindcss/typography";
 
 @layer base {
   h1 {
